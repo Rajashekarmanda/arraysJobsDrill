@@ -29,11 +29,31 @@ let data = [{"id":1,"first_name":"Gregg","last_name":"Lacey","job":"Web Develope
 {"id":29,"first_name":"Fayth","last_name":"Lindop","job":"Health Coach II","salary":"$5.14","location":"Indonesia"},
 {"id":30,"first_name":"Curtice","last_name":"Mea","job":"Senior Financial Analyst","salary":"$5.00","location":"Colombia"}]
 
-let updatedSalaryArr = data.map((eachEmployee) => {
-    if (typeof eachEmployee.salary == 'string'){
-        let newSalary = (eachEmployee.salary.slice(1,eachEmployee.salary.length))*1
-       return {...eachEmployee,salary : newSalary}
+let countriesList = []
+
+data.forEach(eachPerson => {
+    if (!countriesList.includes(eachPerson.location)){
+        countriesList.push(eachPerson.location)
     }
+});
+let countryWiseAllSalaries = []
+
+function CreateCountryWiseSalary(country,totalSalary,countOfCountryIs){ // creating for country wise total salary object --- Factory function
+    return{
+        country:country,
+        averageSalary:(totalSalary/countOfCountryIs).toFixed(2),
+    }
+}
+countriesList.map(eachCountry => {
+    let salaryOfCountry = 0
+    let countOfCountry = 0
+    data.map(eachPerson => {
+        if (eachPerson.location === eachCountry) {
+            salaryOfCountry += eachPerson.salary.slice(1,eachPerson.salary.length) * 1
+            countOfCountry++
+        }
+    })
+    countryWiseAllSalaries.push(CreateCountryWiseSalary(eachCountry,salaryOfCountry,countOfCountry))
 })
 
-console.log(updatedSalaryArr)
+console.log(countryWiseAllSalaries)

@@ -32,7 +32,3 @@ let data = [{"id":1,"first_name":"Gregg","last_name":"Lacey","job":"Web Develope
 let allWebDevelopers = data.filter((each) => (each.job).startsWith("Web Developer"))
 
 console.log(allWebDevelopers)
-
-const fs = require('fs')
-
-fs.writeFileSync

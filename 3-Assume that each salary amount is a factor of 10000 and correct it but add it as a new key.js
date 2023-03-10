@@ -29,11 +29,9 @@ let data = [{"id":1,"first_name":"Gregg","last_name":"Lacey","job":"Web Develope
 {"id":29,"first_name":"Fayth","last_name":"Lindop","job":"Health Coach II","salary":"$5.14","location":"Indonesia"},
 {"id":30,"first_name":"Curtice","last_name":"Mea","job":"Senior Financial Analyst","salary":"$5.00","location":"Colombia"}]
 
-let updatedSalaryArr = data.map((eachEmployee) => {
-    if (typeof eachEmployee.salary == 'string'){
-        let newSalary = (eachEmployee.salary.slice(1,eachEmployee.salary.length))*1
-       return {...eachEmployee,salary : newSalary}
-    }
-})
-
-console.log(updatedSalaryArr)
+data.forEach(element => {
+    
+    let modifySalary = element.salary.slice(1,element.salary.length)*10000
+    element.corrected_salary = modifySalary
+});
+console.log(data)
