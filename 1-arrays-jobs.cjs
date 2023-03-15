@@ -1,4 +1,4 @@
-[{"id":1,"first_name":"Gregg","last_name":"Lacey","job":"Web Developer III","salary":"$3.62","location":"Malta"},
+const data = [{"id":1,"first_name":"Gregg","last_name":"Lacey","job":"Web Developer III","salary":"$3.62","location":"Malta"},
 {"id":2,"first_name":"Hernando","last_name":"Scargill","job":"Sales Associate","salary":"$4.16","location":"France"},
 {"id":3,"first_name":"Loren","last_name":"Doull","job":"Physical Therapy Assistant","salary":"$4.34","location":"U.S. Virgin Islands"},
 {"id":4,"first_name":"Sherwood","last_name":"Adriano","job":"Web Developer II","salary":"$6.46","location":"Brazil"},
@@ -28,6 +28,8 @@
 {"id":28,"first_name":"Basile","last_name":"Luna","job":"Data Coordiator","salary":"$2.61","location":"Chile"},
 {"id":29,"first_name":"Fayth","last_name":"Lindop","job":"Health Coach II","salary":"$5.14","location":"Indonesia"},
 {"id":30,"first_name":"Curtice","last_name":"Mea","job":"Senior Financial Analyst","salary":"$5.00","location":"Colombia"}]
+
+module.exports = data
 
 /* 
     Use higher order functions, like `map`, `each`, `reduce`, `forEach`, `filter` etc., only to solve the questions below.
